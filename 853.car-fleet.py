@@ -7,16 +7,14 @@
 # @lc code=start
 class Solution(object):
     def carFleet(self, target, position, speed):
-        cars = [(p, s) for p, s in zip(position, speed)]
-        cars.sort(reverse=True)
-
+        cars = sorted(zip(position, speed), reverse=True)
         stack = []
-        for p, s in cars:
-            time = (target - p) / s
-            stack.append(time)
-            if len(stack) >= 2 and stack[-1] <= stack[-2]:
-                stack.pop()
+        for pos,spd in cars:
+            time = (float)(target - pos)/spd
+            if not stack or time >stack[-1]:
+                stack.append(time)
         return len(stack)
+        
         
         
        
