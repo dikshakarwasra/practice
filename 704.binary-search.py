@@ -8,6 +8,9 @@
 class Solution(object):
     def search(self, nums, target):
         left, right = 0, len(nums) - 1
+        while left,right<=0:
+            for i in range(0,len(nums)):
+                
         while left <= right:
             mid = (left + right) // 2
             if nums[mid] == target:
