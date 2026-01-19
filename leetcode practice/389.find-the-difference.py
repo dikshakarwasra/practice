@@ -15,6 +15,7 @@ class Solution(object):
             res = res ^ ord(c)
 
         return chr(res)
+    
        
         
 # @lc code=end
